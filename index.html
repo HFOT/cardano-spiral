@@ -583,6 +583,18 @@ h2{letter-spacing:-.028em}
   padding-top:clamp(90px,12vh,150px);
   padding-bottom:clamp(56px,9vh,110px);
 }
+/* the method line: smaller than the name, but given its own step in the ramp.
+   Set in the serif the site reserves for its thinking voice. */
+.hero__kicker{
+  margin:0 0 clamp(10px,1.8vh,20px);
+  font-family:var(--f-min);font-weight:600;
+  font-size:clamp(16px,2.2vw,30px);letter-spacing:.05em;line-height:1.4;
+  color:rgba(196,216,255,.94);
+  text-shadow:0 0 22px rgba(110,151,255,.35);
+}
+:root[lang="en"] .hero__kicker{letter-spacing:.01em;font-size:clamp(15px,1.9vw,26px)}
+.hero__eyebrow{margin-bottom:clamp(12px,2vh,22px)}
+
 .hero__cue{margin:clamp(44px,7vh,86px) 0 0;padding:0;line-height:0}
 .hero__cue i{
   display:block;width:1px;height:clamp(40px,6vh,64px);
@@ -724,7 +736,8 @@ h2{letter-spacing:-.028em}
 
 <header class="hero">
   <div class="hero__in">
-    <p class="hero__eyebrow" data-en="Cardano — thinking in structure and events">Cardano — 構造と事象で考える</p>
+    <p class="hero__eyebrow">Cardano / Decentralization &amp; Governance</p>
+    <p class="hero__kicker" data-en="Thinking in structure and events">構造と事象で考える</p>
     <h1 data-en="The Decentralization<br><span class='q'>Spiral.</span>">分散型スパイラル</h1>
     <p class="hero__cue" aria-hidden="true"><i></i></p>
   
