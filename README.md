@@ -44,9 +44,32 @@ Cardano の分散化とガバナンスを、検証済みの数字から分析す
 
 数値は取得時点のもの。オンチェーン値はエポックごとに動くため、日付を併記している。
 
+## 編集と公開
+
+正本は **`src/page.html`**。これだけを編集する。`index.html` は生成物なので直接触らない。
+
+```bash
+python build.py                       # src/page.html -> index.html
+git add -A && git commit -m "..." && git push
+```
+
+push すると GitHub Pages が数十秒で再ビルドし、
+https://hfot.github.io/cardano-spiral/ に反映される。
+
+`src/page.html` は doctype も `<head>` も持たない断片で、Claude の Artifact
+がそのまま受け取れる形。`build.py` が doctype・lang・charset・**viewport**・
+description・OG・theme-color・favicon・最小リセットを被せて単体ページにする。
+viewport を落とすとスマートフォンで崩れるので、生成を経ずに公開しないこと。
+
+ローカル確認：
+
+```bash
+python -m http.server 8931 --bind 127.0.0.1
+```
+
 ## 技術
 
-依存ゼロの単一 HTML ファイル。ビルド工程なし。
+依存ゼロの単一 HTML ファイル。ビルドは上記の 1 スクリプトのみ。
 
 - 日英切替（`data-en` 属性 + localStorage、初回はブラウザ言語で判定）
 - 背景は Canvas。六方格子に 16 の波源を置き、二種類の波を伝播させてメッシュを点灯させる
