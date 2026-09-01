@@ -280,6 +280,25 @@ td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:n
 .src a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--hair)}
 .src a:hover{color:var(--accent);border-color:var(--accent)}
 .src .disc{margin:26px 0 0;font-size:12.5px;color:var(--ink-3);line-height:1.8;max-width:54em}
+.src h4+.srcwrap{margin-top:4px}
+.srcwrap{overflow-x:auto;margin:0 0 14px}
+table.srctable{border-collapse:collapse;width:100%;min-width:660px}
+table.srctable th,table.srctable td{
+  text-align:left;vertical-align:top;padding:9px 16px 9px 0;
+  border-bottom:1px solid var(--hair);font-size:12.5px;line-height:1.6;color:var(--ink-2);
+}
+table.srctable th{
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;border-bottom-color:var(--ink-3);
+}
+table.srctable td:first-child{color:var(--ink);font-weight:500}
+table.srctable td.v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+table.srctable td.v small{color:var(--ink-3);font-size:11px}
+table.srctable td.d{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+table.srctable td.d small{font-size:10.5px}
+.srcnote{margin:0 0 30px;font-size:11.5px;line-height:1.85;color:var(--ink-3);max-width:56em}
+.src h4{margin-top:34px}
+.src h4:first-of-type{margin-top:0}
 
 /* ── reveal ─────────────────────────────────────────── */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .85s ease,transform .85s cubic-bezier(.22,.75,.25,1)}
@@ -2158,6 +2177,42 @@ h2{letter-spacing:-.028em}
 
 <footer class="src">
   <div class="wrap">
+    <h4 data-en="Where every number comes from">数字の出どころ</h4>
+    <div class="srcwrap">
+      <table class="srctable">
+        <thead>
+          <tr>
+            <th data-en="Figure">数字</th>
+            <th data-en="Value">値</th>
+            <th data-en="As of">時点</th>
+            <th data-en="Source">出どころ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-en="Registered stake pools">登録ステークプール</td><td class="v">2,891</td><td class="d">2026</td><td data-en="Koios — on-chain">Koios（オンチェーン実測）</td></tr>
+          <tr><td data-en="Average stake per pool">1プールあたり平均委任額</td><td class="v">7.41M ADA</td><td class="d">epoch 652</td><td data-en="Koios — active stake ÷ pools (derived)">Koios（有効ステーク ÷ プール数・導出）</td></tr>
+          <tr><td data-en="Saturation cap (k = 500)">飽和上限（k = 500）</td><td class="v">≈73.4M ADA</td><td class="d">2026</td><td data-en="Protocol parameter">プロトコルパラメータ</td></tr>
+          <tr><td data-en="Nakamoto coefficient">中本係数</td><td class="v">16</td><td class="d">2026</td><td data-en="Cardano Glossary / Chainspect">Cardano Glossary / Chainspect</td></tr>
+          <tr><td data-en="Circulating ADA staked">ステーキング比率</td><td class="v">58.3%</td><td class="d">epoch 652</td><td data-en="Koios — on-chain">Koios（オンチェーン実測）</td></tr>
+          <tr><td data-en="Treasury balance">トレジャリー残高</td><td class="v">1.345B ADA</td><td class="d">epoch 652</td><td data-en="Koios — on-chain">Koios（オンチェーン実測）</td></tr>
+          <tr><td data-en="Net treasury decline">トレジャリー純減</td><td class="v">−290M ADA</td><td class="d">epoch 613 → 652</td><td data-en="Koios — difference (derived)">Koios（差分・導出）</td></tr>
+          <tr><td data-en="Net Change Limit, rejected">支出上限（NCL）否決</td><td class="v">44.15% <small>/ &gt;50%</small></td><td class="d">2026-03-11</td><td data-en="Cardano Foundation ICC minutes">Cardano Foundation ICC 議事録</td></tr>
+          <tr><td data-en="Summit 2026, rejected">Summit 2026 否決</td><td class="v">65.21% <small>/ &gt;66.67%</small></td><td class="d">2026-06-01</td><td data-en="CoinDesk / The Block">CoinDesk / The Block</td></tr>
+          <tr><td data-en="Summit 2026 request">Summit 2026 要求額</td><td class="v">7.8M ADA</td><td class="d">2026</td><td data-en="CoinDesk">CoinDesk</td></tr>
+          <tr><td data-en="CC renewal turnout">憲法委員会更新の参加率</td><td class="v">DRep 66.3% <small>/ 67%</small> · SPO 39% <small>/ 51%</small></td><td class="d">2026-08 late</td><td data-en="COINOTAG / Intersect weekly #125">COINOTAG / Intersect 週次 #125</td></tr>
+          <tr><td data-en="DReps deciding a CC seat">CC 1議席を決めた DRep</td><td class="v">88 <small>(33 / 44)</small></td><td class="d">2025-12</td><td data-en="Intersect">Intersect</td></tr>
+          <tr><td data-en="Constitution v2.4 ratified">憲法 v2.4 批准</td><td class="v">DRep 79%</td><td class="d">2026-01-24 <small>effective</small></td><td data-en="Intersect / cardano.org">Intersect / cardano.org</td></tr>
+          <tr><td data-en="Catalyst, distributed">Catalyst 累計配分</td><td class="v">$150M+ <small>/ 2,200</small></td><td class="d">2020–2026</td><td data-en="CryptoSlate">CryptoSlate</td></tr>
+          <tr><td data-en="Fund14 ballot">Fund14 投票対象</td><td class="v">1,600+ <small>/ 20M ADA</small></td><td class="d">2026</td><td data-en="Project Catalyst">Project Catalyst</td></tr>
+          <tr><td data-en="Fund15 returned to treasury">Fund15 返還</td><td class="v">18.5M ADA <small>+ 250,000 USDM</small></td><td class="d">2026</td><td data-en="CryptoSlate">CryptoSlate</td></tr>
+          <tr><td data-en="Intersect 2026 committee vote">Intersect 2026 委員会選挙</td><td class="v">187 <small>voters / 37 seats</small></td><td class="d">2026-05-08</td><td data-en="cardano.org">cardano.org</td></tr>
+          <tr><td data-en="DeFi TVL, USD terms">DeFi TVL（米ドル建て）</td><td class="v">≈−83%</td><td class="d">2025-08 → 2026-08</td><td data-en="DefiLlama">DefiLlama</td></tr>
+          <tr><td data-en="Treasury depletion projection">枯渇の試算</td><td class="v">2033 Q3 <small>at 350M/yr</small></td><td class="d">2026</td><td data-en="TapTools — projection, not measurement">TapTools（試算であり実測ではない）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="srcnote" data-en="On-chain values move every epoch; they are stated with the epoch they were read at. Derived rows say so. The final row is an extrapolation of current spending and is not a forecast. Definitions of the constitution and of treasury withdrawals are quoted from CIP-1694 and the constitution repository rather than from secondary coverage.">オンチェーンの値はエポックごとに動くため、読み取ったエポックを併記している。導出値はその旨を明記した。最終行は現在の支出水準の外挿であり、予測ではない。憲法とトレジャリー引き出しの定義は、二次報道ではなく CIP-1694 と憲法リポジトリの原文から引いている。</p>
+
     <h4>Sources</h4>
     <ol>
       <li><a href="https://docs.cardano.org/about-cardano/governance-overview" target="_blank" rel="noopener">Governance overview — Cardano Docs</a></li>
