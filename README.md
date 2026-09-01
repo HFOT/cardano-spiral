@@ -1,4 +1,6 @@
-# 分散化スパイラル / The Decentralization Spiral
+# 分散型スパイラル — 構造と事象で考える
+
+The Decentralization Spiral — thinking in structure and events
 
 Cardano の分散化とガバナンスを、検証済みの数字から分析する日英バイリンガルの一枚もの。
 
