@@ -67,6 +67,19 @@ viewport を落とすとスマートフォンで崩れるので、生成を経�
 python -m http.server 8931 --bind 127.0.0.1
 ```
 
+### アイコン
+
+サイトマークは生成物。形を変えたいときは `tools/make_icons.py` の
+`R0 / R1 / TURNS / STROKE / NODE_R` を触って再生成する。
+
+```bash
+python tools/make_icons.py    # favicon.svg / .png / .ico / apple-touch-icon / icon-512
+```
+
+中心から外へ開く螺旋。色は見出しと同じ シアン → アズール → インディゴ の
+ランプで、外端の白い点は「止めるのに要る最小の主体」を指す。
+ベクタと各ラスタは同じ幾何から生成されるので、ずれない。
+
 ## 技術
 
 依存ゼロの単一 HTML ファイル。ビルドは上記の 1 スクリプトのみ。
