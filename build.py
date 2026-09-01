@@ -18,6 +18,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, 'src', 'page.html')
 OUT = os.path.join(ROOT, 'index.html')
 
+SITE = 'https://hfot.github.io/cardano-spiral/'
+
 DESC = ('最も分散化されたチェーンは、持続可能な状態にあるのか。'
         '立場と利害、選抜圧力、責任の空白、トレジャリー枯渇まで、'
         '検証済みの数字で Cardano のガバナンスを分析する。')
@@ -31,8 +33,10 @@ TEMPLATE = '''<!doctype html>
 <meta name="description" content="{desc}">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#05070B">
+<link rel="canonical" href="{site}">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%B7%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
+<meta property="og:url" content="{site}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:locale" content="ja_JP">
@@ -71,7 +75,8 @@ def main():
     head = re.sub(r'<meta charset="utf-8">\s*', '', head)
     head = re.sub(r'<title>.*?</title>\s*', '', head, flags=re.S)
 
-    html = TEMPLATE.format(title=title, desc=DESC, head=head.strip(), body=body.strip())
+    html = TEMPLATE.format(title=title, desc=DESC, site=SITE,
+                           head=head.strip(), body=body.strip())
     open(OUT, 'w', encoding='utf-8', newline='\n').write(html)
 
     print('built %s  (%d bytes)' % (os.path.relpath(OUT, ROOT), len(html.encode('utf-8'))))
