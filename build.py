@@ -45,6 +45,11 @@ TEMPLATE = '''<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
+<!-- 絶対URLでないと各SNSのクローラーが拾えない -->
+<meta property="og:image" content="{site}og.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="分散型スパイラル — 構造と事象で考える">
 <meta name="twitter:card" content="summary_large_image">
 {head}
 <style>
